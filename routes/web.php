@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/checklists/templates', 'TemplateController@ListChecklistTemplates');
+$router->get('/checklists/templates/{id}', 'TemplateController@GetChecklistTemplates');
+
