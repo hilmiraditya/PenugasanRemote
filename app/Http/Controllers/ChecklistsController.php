@@ -46,6 +46,21 @@ class ChecklistsController extends Controller
 
     public function CreateChecklist(Request $request)
     {
+        /* 
+            Nama Parameter untuk di body :
+                FORMAT : 
+                nama parameter => nama untuk di body 
+                
+                untuk yang array[object]
+
+                object_domain => object_domain
+                object_id => object_id
+                due => due
+                urgency => urgency
+                description => description
+                items => $item
+                task_id => task_id
+        */
         $item = array();
         for($a=0;$a<sizeof($request->items);$a++)
         {

@@ -100,6 +100,16 @@ class TemplateController extends Controller
 
     public function AssignBulkChecklistTemplates(Request $request, $id)
     {
+        /* 
+            Nama Parameter untuk di body :
+                FORMAT : 
+                nama parameter => nama untuk di body 
+
+                untuk yang array[object]
+                object_id => object_id
+                object_domain => object_domain
+        */
+
         $item = array();
         for($a=0;$a<sizeof($request->object_id);$a++)
         {
@@ -126,19 +136,6 @@ class TemplateController extends Controller
         $request = $client->createRequest('POST', $url, $params);
         $response = $client->send($request);
         return response()->json($response);
-    }
-
-    public function UpdateChecklistTemplates(Request $request, $id)
-    {
-        $authorization = $request->header('authorization');
-        $url = 'https://kong.command-api.kw.com/checklists/templates/'.$id;
-
-        $client = new Client;
-        $client->setDefaultOption('headers/authorization', $authorization);
-        
-        $request = $client->createRequest('PATCH', $url);
-        $response = $client->send($request);
-        return response()->json($response);   
     }
 
     public function DeleteChecklistsTemplates(Request $request, $id)

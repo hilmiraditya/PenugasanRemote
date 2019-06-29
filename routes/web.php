@@ -19,7 +19,6 @@ $router->get('/ListChecklist', 'TemplateController@ListChecklistTemplates');
 $router->get('/GetChecklist/{id}', 'TemplateController@GetChecklistTemplates');
 $router->post('/CreateChecklistTemplate', 'TemplateController@CreateChecklistTemplate');
 $router->post('/AssignBulkChecklist/{id}', 'TemplateController@AssignBulkChecklistTemplates');
-$router->get('/UpdateChecklist/{id}', 'TemplateController@UpdateChecklistTemplates');
 $router->get('/DeleteChecklist/{id}', 'TemplateController@DeleteChecklistsTemplates');
 
 $router->get('/GetHistory', 'HistoryController@GetListHistory');
