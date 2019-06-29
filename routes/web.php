@@ -15,6 +15,19 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/checklists/templates', 'TemplateController@ListChecklistTemplates');
-$router->get('/checklists/templates/{id}', 'TemplateController@GetChecklistTemplates');
+$router->get('/ListChecklist', 'TemplateController@ListChecklistTemplates');
+$router->get('/GetChecklist/{id}', 'TemplateController@GetChecklistTemplates');
+$router->post('/CreateChecklistTemplate', 'TemplateController@CreateChecklistTemplate');
+$router->post('/AssignBulkChecklist/{id}', 'TemplateController@AssignBulkChecklistTemplates');
+$router->get('/UpdateChecklist/{id}', 'TemplateController@UpdateChecklistTemplates');
+$router->get('/DeleteChecklist/{id}', 'TemplateController@DeleteChecklistsTemplates');
+
+$router->get('/GetHistory', 'HistoryController@GetListHistory');
+$router->get('/GetHistory/{id}', 'HistoryController@GetHistoryById');
+
+$router->get('/GetChecklist/{id}', 'ChecklistsController@GetChecklist');
+$router->get('/GetListChecklist', 'ChecklistsController@GetListChecklist');
+$router->post('/CreateChecklist', 'ChecklistsController@CreateChecklistTemplate');
+$router->get('/DeleteChecklist/{id}', 'ChecklistsController@DeleteChecklist');
+
 
